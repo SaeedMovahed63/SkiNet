@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\API.csproj": {}
+    "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\API.csproj": {
+    "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "c:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\API.csproj",
+        "projectPath": "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Faraz.Loloei\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\obj\\",
+        "outputPath": "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

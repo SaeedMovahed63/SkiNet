@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "29fNxX4LGm4E3eg9EFAA4zwNDgKbOua4MVgeo/1Ani0xk9PeXZDlt/RHyFDUxpY26c5/P7X4j4ktLzwxEUY4OQ==",
+  "dgSpecHash": "FkLw0wbvWjVV548Pl3K82ol+MVFgTeyrsyeYg7C7XT1rKsYoBeWzmy+xfR81/l18kSqbJcWWOZwS4XAGgEGfOQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Faraz.Loloei\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Faraz.Loloei\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
