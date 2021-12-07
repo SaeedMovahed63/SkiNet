@@ -954,32 +954,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Saeed\\.nuget\\packages\\": {},
-    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Faraz.Loloei\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Saeed\\Desktop\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet2\\skinet\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\Saeed\\Desktop\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\Saeed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Saeed\\Desktop\\Skinet\\skinet\\Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet2\\skinet\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\Faraz.Loloei\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet2\\skinet\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\ProgramData\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Saeed\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Faraz.Loloei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -987,8 +986,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Saeed\\Desktop\\Skinet\\skinet\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\Saeed\\Desktop\\Skinet\\skinet\\Core\\Core.csproj"
+            "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet2\\skinet\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\Faraz.Loloei\\Desktop\\Angular\\skinet2\\skinet\\Core\\Core.csproj"
             }
           }
         }

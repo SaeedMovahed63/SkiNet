@@ -4,18 +4,18 @@ namespace Core.Specifications
 {
     public class ProductsWithTypesAndBrandsSpecification :BaseSpecification<Product>
     {
-        public ProductsWithTypesAndBrandsSpecification(string sort , int? brandId , int? typeId)
+        public ProductsWithTypesAndBrandsSpecification(ProductspecParams productParams)
         :base(x=>
-        (!brandId.HasValue || x.ProductTypeId == brandId) &&
-        (!typeId.HasValue || x.ProductTypeId == typeId)
+        (!productParams.brandId.HasValue || x.ProductTypeId == productParams.brandId) &&
+        (!productParams.typeId.HasValue || x.ProductTypeId == productParams.typeId)
         )
         {
             AddInclude(x=>x.ProductType);
             AddInclude(x=>x.ProductBrand);
             AddOrderBy(x=>x.Name);
-
-            if(!string.IsNullOrEmpty(sort)){
-                switch(sort)
+            ApplyPaging(productParams.PageSize * (productParams.PageIndex -1), productParams.PageSize);
+            if(!string.IsNullOrEmpty(productParams.sort)){
+                switch(productParams.sort)
                 {
                     case "priceAsc": AddOrderBy(x=>x.Price); break;
                     case "priceDesc": AddOrderByDescending(x=>x.Price); break;
@@ -25,7 +25,7 @@ namespace Core.Specifications
 
         }
 
-           public ProductsWithTypesAndBrandsSpecification(int id) :base(x=>x.Id == id)
+        public ProductsWithTypesAndBrandsSpecification(int id) :base(x=>x.Id == id)
         {
             AddInclude(x=>x.ProductType);
             AddInclude(x=>x.ProductBrand);
