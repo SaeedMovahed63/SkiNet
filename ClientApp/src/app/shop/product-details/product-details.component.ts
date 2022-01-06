@@ -17,9 +17,11 @@ export class ProductDetailsComponent implements OnInit {
     private bcService: BreadcrumbService
   ) {
     this.product = {} as IProduct;
+    this.bcService.set('@ProductDetails',"");
   }
 
   ngOnInit() {
+   
     this.loadProduct();
   }
 
