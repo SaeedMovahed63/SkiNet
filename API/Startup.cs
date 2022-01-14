@@ -8,6 +8,8 @@ using Microsoft.OpenApi.Models;
 using API.Helpers;
 using API.Middleware;
 using API.Extensions;
+using StackExchange.Redis;
+
 namespace API
 {
     public class Startup
@@ -18,7 +20,7 @@ namespace API
             _config = config;
         }
 
-      
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -28,24 +30,31 @@ namespace API
 
 
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
-            services.AddApplicationServices(); 
+            services.AddSingleton<IConnectionMultiplexer>(c =>
+            {
+                var configuration = ConfigurationOptions.Parse(
+                    _config.GetConnectionString("Redis"), true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+            services.AddApplicationServices();
             services.AddSwaggerDocumentation();
             services.AddCors(
-                opt=>{
-                    opt.AddPolicy("CorsPolicy",policy=>
-                    {
-                        policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
-                    });
+                opt =>
+                {
+                    opt.AddPolicy("CorsPolicy", policy =>
+                     {
+                         policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                     });
                 });
             services.AddAutoMapper(typeof(MappingProfiles));
-        
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            app.UseMiddleware<ExceptionMiddleware>(); 
+            app.UseMiddleware<ExceptionMiddleware>();
             app.UseStatusCodePagesWithReExecute("/errors/{0}");
             app.UseHttpsRedirection();
 
@@ -55,7 +64,7 @@ namespace API
             app.UseAuthorization();
 
             app.UseSwaggerDocumentation();
-            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
