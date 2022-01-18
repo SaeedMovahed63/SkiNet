@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
 export interface IBasket {
     id: string;
-    items: (IBaketItem)[] | null;
+    items: (IBasketItem)[] | null;
   }
-  export interface IBaketItem {
+  export interface IBasketItem {
     id: number;
     productName: string;
     price: number;
@@ -15,7 +15,7 @@ export interface IBasket {
 
   export class Basket implements IBasket{
       id = uuidv4();
-      items!:  IBaketItem[];
+      items!:  IBasketItem[];
 
   }
   
