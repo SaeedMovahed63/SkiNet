@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { IBasket, IBasketItem } from '../shared/models/basket';
+import { Basket, IBasket, IBasketItem } from '../shared/models/basket';
 import { IProduct } from '../shared/models/product';
 
 @Injectable({
@@ -27,6 +27,7 @@ export class BasketService {
     return this.http.post<IBasket>(this.baseUrl + 'basket', basket).subscribe(
       (response: IBasket) => {
         this.basketSource.next(response);
+        console.log(response);
       },
       (error) => {
         console.log(error);
@@ -43,20 +44,42 @@ export class BasketService {
       item,
       quantity
     );
-    const basket= this.getCurrentBasketValue()??this.createBasket();
+    const basket = this.getCurrentBasketValue() ?? this.createBasket();
+    basket.items = this.addOrUpdateItem(basket.items, itemToAdd, quantity);
+    this.setBasket(basket);
   }
-  createBasket(): IBasket {
-    throw new Error('Method not implemented.');
+
+  private addOrUpdateItem(
+    items: IBasketItem[],
+    itemToAdd: IBasketItem,
+    quantity: number
+  ): IBasketItem[] {
+    const index = items.findIndex((i) => i.id === itemToAdd.id);
+    if (index === -1) {
+      itemToAdd.quantity = quantity;
+      items.push(itemToAdd);
+    } else {
+      items[index].quantity += quantity;
+    }
+    return items;
   }
-  private mapProductItemToBasketItem(item: IProduct, quantity: number): IBasketItem {
-   return {
-     id:item.id,
-     productName:item.name,
-     price:item.price,
-     pictureUrl:item.pictureUrl,
-     quantity,
-     brand:item.productBrand,
-     type:item.productType
-   }
+  private createBasket(): IBasket {
+    const basket = new Basket();
+    localStorage.setItem('basket_id', basket.id);
+    return basket;
+  }
+  private mapProductItemToBasketItem(
+    item: IProduct,
+    quantity: number
+  ): IBasketItem {
+    return {
+      id: item.id,
+      productName: item.name,
+      price: item.price,
+      pictureUrl: item.pictureUrl,
+      quantity,
+      brand: item.productBrand,
+      type: item.productType,
+    };
   }
 }
