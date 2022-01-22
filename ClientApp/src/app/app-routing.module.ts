@@ -35,6 +35,13 @@ const routes: Routes = [
     data: { breadcrumb: 'basket' },
   },
 
+  {
+    path: 'checkout',
+    loadChildren: () =>
+      import('./checkout/checkout.module').then((mod) => mod.CheckoutModule),
+    data: { breadcrumb: 'checkout' },
+  },
+
   { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 ];
 
