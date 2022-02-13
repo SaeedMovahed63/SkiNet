@@ -9,6 +9,7 @@ import { OrderTotalsComponent } from './components/order-totals/order-totals.com
 import { BasketSummaryComponent } from './components/basket-summary/basket-summary.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TextInputComponent } from './text-input/text-input.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     PagerComponent,
     OrderTotalsComponent,
     BasketSummaryComponent,
+    TextInputComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BasketSummaryComponent,
     ReactiveFormsModule,
     BsDropdownModule,
+    TextInputComponent,
   ],
 })
 export class SharedModule {}
